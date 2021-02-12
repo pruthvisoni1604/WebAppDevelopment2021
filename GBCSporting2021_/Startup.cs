@@ -58,6 +58,7 @@ namespace GBCSporting2021_
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseStatusCodePagesWithRedirects("~/Home/Error");
         }
     }
 }
