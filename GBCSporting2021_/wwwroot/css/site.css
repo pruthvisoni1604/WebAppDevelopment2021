@@ -35,3 +35,37 @@ body {
         display: none;
     }
 }
+
+
+.navbar-inverse{
+
+    background-color:#60d6bc;
+}
+
+/*
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }*/
+
+.nav-men-item {
+    color: white !important;
+}
+
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #60d6bc;
+    color: black;
+    font-size: small;
+    padding: 5px;
+    margin-top: 5px;
+}
