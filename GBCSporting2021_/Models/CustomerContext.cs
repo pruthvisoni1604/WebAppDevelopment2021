@@ -209,7 +209,7 @@ namespace GBCSporting2021_.Models
                 {
                     ProductId = 6,
                     Code = "TRYT789",
-                    Productname = "Check Manager 2.0",
+                    Productname = "Draft Manager 2.0",
                     Productprice = 7.69,
                     ReleaseDate = DateTime.Now
                 }
@@ -218,9 +218,69 @@ namespace GBCSporting2021_.Models
                 new Incident
                 { 
                     IncidentId = 1,
-
+                    CustomerId = 5,
+                    ProductId = 2,
+                    Tital = "Error in launching program",
+                    Description = "Program fail with error code 510, unable to open database",
+                    TechnicianId = 2,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
+                },
+                new Incident
+                {
+                    IncidentId = 2,
+                    CustomerId = 3,
+                    ProductId = 2,
+                    Tital = "Error in launching program",
+                    Description = "Program fail with error code 510, unable to open database",
+                    TechnicianId = 2,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
+                },
+                new Incident
+                {
+                    IncidentId = 3,
+                    CustomerId = 4,
+                    ProductId = 5,
+                    Tital = "Error while choose exit option",
+                    Description = "404 error when chooose exit option and can not exit",
+                    TechnicianId = 4,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
+                },
+                new Incident
+                {
+                    IncidentId = 4,
+                    CustomerId = 3,
+                    ProductId = 4,
+                    Tital = "Error in all project showing ",
+                    Description = "database can not load when choose show all project",
+                    TechnicianId = 6,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
+                },
+                new Incident
+                {
+                    IncidentId = 5,
+                    CustomerId = 6,
+                    ProductId = 6,
+                    Tital = "Error in draft track 2.0",
+                    Description = "Some time draft can not be tracked",
+                    TechnicianId = 6,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
+                },
+                new Incident
+                {
+                    IncidentId = 6,
+                    CustomerId = 3,
+                    ProductId = 3,
+                    Tital = "Error in setting Class",
+                    Description = "Get Error in setting class for reminder",
+                    TechnicianId = 4,
+                    Dateopened = DateTime.Now,
+                    Dateclosed = ""
                 }
-               
                 );
 
 

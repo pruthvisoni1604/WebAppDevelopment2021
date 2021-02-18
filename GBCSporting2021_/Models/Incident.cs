@@ -23,7 +23,7 @@ namespace GBCSporting2021_.Models
         [Range(1, 10, ErrorMessage = "Please select a technician.")]
         public Technician Technician { get; set; }
         public DateTime Dateopened { get; set; }
-        public DateTime Dateclosed { get; set; }
+        public string Dateclosed { get; set; }
 
     }
 }
