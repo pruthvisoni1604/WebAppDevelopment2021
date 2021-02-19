@@ -26,7 +26,7 @@ namespace GBCSporting2021_.Models
         public int CountryId { get; set; }
         [Range(1, 10, ErrorMessage = "Please select a country.")]
         public Country Country { get; set; }
-        [Required(ErrorMessage = "Please enter a valid email.")]
+        [Required(ErrorMessage = "Please enter a valid phone number.")]
         public string  Phone { get; set; }
     }
 }

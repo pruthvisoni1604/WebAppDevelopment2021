@@ -15,8 +15,8 @@ namespace GBCSporting2021_.Models
         [Range(1, 10, ErrorMessage = "Please select a product.")]
         public Product Product { get; set; }
         public int ProductId { get; set; }
-        [Required(ErrorMessage = "Please enter a valid tital.")]
-        public string Tital { get; set; }
+        [Required(ErrorMessage = "Please enter a valid title.")]
+        public string title { get; set; }
         [Required(ErrorMessage = "Please enter a valid Description.")]
         public string Description { get; set; }
         public int TechnicianId { get; set; }
