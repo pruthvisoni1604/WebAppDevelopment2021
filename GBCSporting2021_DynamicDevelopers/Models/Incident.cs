@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GBCSporting2021_.Models
+namespace GBCSporting2021_DynamicDevelopers.Models
 {
     public class Incident
     {

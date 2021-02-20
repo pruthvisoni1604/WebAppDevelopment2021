@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GBCSporting2021_.Migrations
+namespace GBCSporting2021_DynamicDevelopers.Migrations
 {
     public partial class Initial : Migration
     {

@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using GBCSporting2021_.Models;
+using GBCSporting2021_DynamicDevelopers.Models;
 
-namespace GBCSporting2021_.Controllers
+namespace GBCSporting2021_DynamicDevelopers.Controllers
 {
     public class HomeController : Controller
     {

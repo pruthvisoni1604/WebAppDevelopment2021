@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GBCSporting2021_.Models
+namespace GBCSporting2021_DynamicDevelopers.Models
 {
     public class ErrorViewModel
     {

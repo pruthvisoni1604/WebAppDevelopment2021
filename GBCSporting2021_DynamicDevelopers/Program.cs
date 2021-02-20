@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace GBCSporting2021_
+namespace GBCSporting2021_DynamicDevelopers
 {
     public class Program
     {
