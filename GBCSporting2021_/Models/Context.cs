@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GBCSporting2021_.Models
 {
-    public class CustomerContext : DbContext
+    public class Context : DbContext
     {
-        public CustomerContext(DbContextOptions<CustomerContext> options)
-            : base(options) { }
+        public Context(DbContextOptions<Context> options) : base(options) { }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Technician> Technicians { get; set; }
@@ -29,10 +28,10 @@ namespace GBCSporting2021_.Models
                 );
             modelBuilder.Entity<Customer>().HasData(
                 new Customer
-                { 
-                    CustomerId = 1,  
-                    Firstname = "Sahay", 
-                    Lastname = "Patel", 
+                {
+                    CustomerId = 1,
+                    Firstname = "Sahay",
+                    Lastname = "Patel",
                     Address = "45, King Road Street",
                     City = "Toronto",
                     State = "Ontario",
@@ -43,9 +42,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 2,  
-                    Firstname = "Rutik", 
-                    Lastname = "Patel", 
+                    CustomerId = 2,
+                    Firstname = "Rutik",
+                    Lastname = "Patel",
                     Address = "20, bobcat terr",
                     City = "Ahmedabad",
                     State = "Gujrat",
@@ -56,9 +55,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 3,  
-                    Firstname = "Namya", 
-                    Lastname = "Patel", 
+                    CustomerId = 3,
+                    Firstname = "Namya",
+                    Lastname = "Patel",
                     Address = "20, bobcat terr",
                     City = "Toronto",
                     State = "Ontario",
@@ -69,9 +68,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 4,  
-                    Firstname = "Pruthvi", 
-                    Lastname = "Soni", 
+                    CustomerId = 4,
+                    Firstname = "Pruthvi",
+                    Lastname = "Soni",
                     Address = "9, Buckhurt street",
                     City = "Utica",
                     State = "Newyork",
@@ -82,9 +81,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 5,  
-                    Firstname = "Vishwa", 
-                    Lastname = "Mavani", 
+                    CustomerId = 5,
+                    Firstname = "Vishwa",
+                    Lastname = "Mavani",
                     Address = "78, Queen Rode",
                     City = "Brampton",
                     State = "Ontario",
@@ -95,9 +94,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 6,  
-                    Firstname = "Harsh", 
-                    Lastname = "Raval", 
+                    CustomerId = 6,
+                    Firstname = "Harsh",
+                    Lastname = "Raval",
                     Address = "85, york residency",
                     City = "Mumbai",
                     State = "Maharastra",
@@ -108,9 +107,9 @@ namespace GBCSporting2021_.Models
                 },
                 new Customer
                 {
-                    CustomerId = 7,  
-                    Firstname = "Vatsal", 
-                    Lastname = "Bhavani", 
+                    CustomerId = 7,
+                    Firstname = "Vatsal",
+                    Lastname = "Bhavani",
                     Address = "65, strong trr",
                     City = "Toronto",
                     State = "Ontario",
@@ -121,9 +120,9 @@ namespace GBCSporting2021_.Models
                 }
                 );
             modelBuilder.Entity<Technician>().HasData(
-                new Technician 
-                { 
-                    TechnicianId = 1, 
+                new Technician
+                {
+                    TechnicianId = 1,
                     Technicianname = "Mickle Robert",
                     Technicianemail = "MickleRobert@domain.com",
                     Technicianphone = "897-897-8979"
@@ -216,7 +215,7 @@ namespace GBCSporting2021_.Models
                 );
             modelBuilder.Entity<Incident>().HasData(
                 new Incident
-                { 
+                {
                     IncidentId = 1,
                     CustomerId = 5,
                     ProductId = 2,
