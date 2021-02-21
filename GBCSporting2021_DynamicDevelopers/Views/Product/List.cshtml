@@ -1,0 +1,38 @@
+﻿@model List<Product>
+
+<h2>Product Manager</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Release Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Code</td>
+                <td>@product.Productname</td>
+                <td>@product.Productprice</td>
+                <td>@product.ReleaseDate</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Edit"
+                       asp-route-id="@product.ProductId"
+                       class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Product" asp-action="Delete"
+                       asp-route-id="@product.ProductId"
+                       class="btn btn-primary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Product" asp-action="Add" class="btn btn-primary">Add Product</a>

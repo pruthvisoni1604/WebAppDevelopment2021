@@ -26,7 +26,7 @@
     <div class="form-group row">
         <label asp-for="Address" class="col-sm-2 col-form-label">Address: </label>
         <div class="col-sm-10">
-            <input asp-for="Address" class="form-control">
+            <input type="text" asp-for="Address" class="form-control">
         </div>
     </div>
 
@@ -47,32 +47,34 @@
     <div class="form-group row">
         <label asp-for="Postalcode" class="col-sm-2 col-form-label">Postal Code: </label>
         <div class="col-sm-10">
-            <input asp-for="Postalcode" class="form-control">
+            <input maxlength="6" asp-for="Postalcode" class="form-control">
         </div>
     </div>
 
-    <div class="form-group">
-        <label asp-for="CountryId">Country: </label>
-        <select asp-for="CountryId" class="form-control custom-select">
-            <option value="">select a country</option>
-            @foreach (Country c in ViewBag.Countries)
-            {
-                <option value="@c.CountryId">@c.Name</option>
-            }
-        </select>
+    <div class="form-group row">
+        <label asp-for="CountryId" class="col-sm-2 col-form-label">Country: </label>
+        <div class="col-sm-10">
+            <select asp-for="CountryId" class="form-control custom-select-lg">
+                <option value="">-----select a country-----</option>
+                @foreach (Country c in ViewBag.Countries)
+                {
+                    <option value="@c.CountryId">@c.Name</option>
+                }
+            </select>
+        </div>
     </div>
 
     <div class="form-group row">
         <label asp-for="Email" class="col-sm-2 col-form-label">Email: </label>
         <div class="col-sm-10">
-            <input asp-for="Email" class="form-control">
+            <input type="email" asp-for="Email" class="form-control">
         </div>
     </div>
 
     <div class="form-group row">
         <label asp-for="Phone" class="col-sm-2 col-form-label">Phone Number: </label>
         <div class="col-sm-10">
-            <input asp-for="Phone" class="form-control">
+            <input maxlength="10" asp-for="Phone" class="form-control">
         </div>
     </div>
 
@@ -80,5 +82,5 @@
     <input type="hidden" asp-for="CustomerId" />
 
     <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
-    <a asp-controller="Customer" asp-action="Index" class="btn btn-primary">Cancel</a>
+    <a asp-controller="Customer" asp-action="List" class="btn btn-primary">Cancel</a>
 </form>
