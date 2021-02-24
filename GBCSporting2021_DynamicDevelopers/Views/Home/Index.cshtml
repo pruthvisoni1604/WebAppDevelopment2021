@@ -20,7 +20,7 @@
                 <table class="table table-bordered" style="margin-bottom:0px;">
 
                     <tbody>
-                        <tr><td><a href="">Manage Products</a></td></tr>
+                        @*<tr><td><a asp-action="Index" asp-route="Products">Manage Products</a></td></tr>*@
                         <tr><td><a href="">Manage Technicians</a></td></tr>
                         <tr><td><a href="">Manage Customers</a></td></tr>
                         <tr><td><a href="">Manage Incidents</a></td></tr>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <br />
-        <table>
+        @*<table>
             @foreach (var item in Model)
             {
                 <tr>
@@ -42,7 +42,7 @@
                 </tr>
             }
         </table>
-        <br />
+        <br />*@
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h4>Technicians</h4>

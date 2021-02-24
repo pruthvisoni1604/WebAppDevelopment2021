@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GBCSporting2021_DynamicDevelopers.Models.Technician>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Technicianname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Technicianemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Technicianphone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Technicianname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Technicianemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Technicianphone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TechnicianId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TechnicianId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TechnicianId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
