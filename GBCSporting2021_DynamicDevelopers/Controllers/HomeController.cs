@@ -93,14 +93,14 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         //}
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "This is our about page, SportsPro provide all services to customers as well as technicians.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Contact US";
 
             return View();
         }
