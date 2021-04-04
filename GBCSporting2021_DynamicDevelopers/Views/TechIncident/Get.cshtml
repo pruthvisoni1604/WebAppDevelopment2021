@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Get";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="List">
+            <div class="form-group">
+                <label class="control-label">Technician</label>
+                <select name="TechnicianId" class="form-control" asp-items="ViewBag.TechnicianId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Select" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
