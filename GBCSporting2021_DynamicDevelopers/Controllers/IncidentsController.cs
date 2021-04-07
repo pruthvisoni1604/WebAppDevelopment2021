@@ -6,29 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GBCSporting2021_DynamicDevelopers.Models;
-using GBCSporting2021_DynamicDevelopers.ViewModel;
-using AutoMapper;
 
 namespace GBCSporting2021_DynamicDevelopers.Controllers
 {
     public class IncidentsController : Controller
     {
         private readonly Context _context;
-        private readonly IMapper _mapper;
 
-        public IncidentsController(Context context, IMapper mapper)
+        public IncidentsController(Context context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         // GET: Incidents
         public async Task<IActionResult> Index()
         {
-            List<IncidentsViewModel> incidents = new List<IncidentsViewModel>();
-            var context =await _context.Incidents.Include(i => i.Customer).Include(i => i.Product).Include(i => i.Technician).ToListAsync();
-            List<IncidentsViewModel> incidentsViewModel = _mapper.Map<List<IncidentsViewModel>>(context);
-            return View(incidentsViewModel);
+            var context = _context.Incidents.Include(i => i.Customer).Include(i => i.Product).Include(i => i.Technician);
+            return View(await context.ToListAsync());
         }
 
         // GET: Incidents/Details/5
@@ -48,9 +42,8 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             {
                 return NotFound();
             }
-            IncidentsViewModel incidentsViewModel = _mapper.Map<IncidentsViewModel>(incident);
 
-            return View(incidentsViewModel);
+            return View(incident);
         }
 
         // GET: Incidents/Create
@@ -67,20 +60,18 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IncidentId,CustomerId,ProductId,TechnicianId,title,Description,Dateopened,Dateclosed")] IncidentsViewModel incidentVM)
+        public async Task<IActionResult> Create([Bind("IncidentId,CustomerId,ProductId,TechnicianId,title,Description,Dateopened,Dateclosed")] Incident incident)
         {
             if (ModelState.IsValid)
             {
-                Incident incident = new Incident();
-                incident = _mapper.Map<Incident>(incidentVM);
                 _context.Add(incident);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", incidentVM.CustomerId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Code", incidentVM.ProductId);
-            ViewData["TechnicianId"] = new SelectList(_context.Technicians, "TechnicianId", "Technicianemail", incidentVM.TechnicianId);
-            return View(incidentVM);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", incident.CustomerId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Code", incident.ProductId);
+            ViewData["TechnicianId"] = new SelectList(_context.Technicians, "TechnicianId", "Technicianemail", incident.TechnicianId);
+            return View(incident);
         }
 
         // GET: Incidents/Edit/5
@@ -92,8 +83,6 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             }
 
             var incident = await _context.Incidents.FindAsync(id);
-            IncidentsViewModel incidentsViewModel = _mapper.Map<IncidentsViewModel>(incident);
-
             if (incident == null)
             {
                 return NotFound();
@@ -101,7 +90,7 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", incident.CustomerId);
             ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Code", incident.ProductId);
             ViewData["TechnicianId"] = new SelectList(_context.Technicians, "TechnicianId", "Technicianemail", incident.TechnicianId);
-            return View(incidentsViewModel);
+            return View(incident);
         }
 
         // POST: Incidents/Edit/5
@@ -109,9 +98,9 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IncidentId,CustomerId,ProductId,TechnicianId,title,Description,Dateopened,Dateclosed")] IncidentsViewModel incidentVM)
+        public async Task<IActionResult> Edit(int id, [Bind("IncidentId,CustomerId,ProductId,TechnicianId,title,Description,Dateopened,Dateclosed")] Incident incident)
         {
-            if (id != incidentVM.IncidentId)
+            if (id != incident.IncidentId)
             {
                 return NotFound();
             }
@@ -120,15 +109,12 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             {
                 try
                 {
-                    Incident incident = new Incident();
-                    incident = _mapper.Map<Incident>(incidentVM);
-
                     _context.Update(incident);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!IncidentExists(incidentVM.IncidentId))
+                    if (!IncidentExists(incident.IncidentId))
                     {
                         return NotFound();
                     }
@@ -139,10 +125,10 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", incidentVM.CustomerId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Code", incidentVM.ProductId);
-            ViewData["TechnicianId"] = new SelectList(_context.Technicians, "TechnicianId", "Technicianemail", incidentVM.TechnicianId);
-            return View(incidentVM);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", incident.CustomerId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Code", incident.ProductId);
+            ViewData["TechnicianId"] = new SelectList(_context.Technicians, "TechnicianId", "Technicianemail", incident.TechnicianId);
+            return View(incident);
         }
 
         // GET: Incidents/Delete/5
@@ -181,6 +167,5 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         {
             return _context.Incidents.Any(e => e.IncidentId == id);
         }
-
     }
 }

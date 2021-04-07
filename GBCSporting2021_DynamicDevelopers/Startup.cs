@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using GBCSporting2021_DynamicDevelopers.Automapper;
 using GBCSporting2021_DynamicDevelopers.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,7 +33,6 @@ namespace GBCSporting2021_DynamicDevelopers
                 options.LowercaseUrls = true;
                 options.AppendTrailingSlash = true;
             });
-            services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfile>(),typeof(Startup));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
