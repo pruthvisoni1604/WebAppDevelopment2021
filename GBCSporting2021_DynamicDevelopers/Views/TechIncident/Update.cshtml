@@ -1,0 +1,101 @@
+﻿@*@model GBCSporting2021_DynamicDevelopers.Models.Incident*@
+@model GBCSporting2021_DynamicDevelopers.ViewModel.IncidentUpdateViewModel
+
+@{
+    ViewData["Title"] = "update";
+}
+
+<h2>update</h2>
+
+<h4>Incident</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div><b>Technician</b></div>
+    </div>
+    <div class="col-md-4">
+        <div>@Model.TechName</div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <div><b>Customer</b></div>
+    </div>
+    <div class="col-md-4">
+        <div>@Model.CustomerName</div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <div><b>Product</b></div>
+    </div>
+    <div class="col-md-4">
+        <div>@Model.ProductName</div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <div><b>Title</b></div>
+    </div>
+    <div class="col-md-4">
+        <div>@Model.title</div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <div><b>Date Opened</b></div>
+    </div>
+    <div class="col-md-4">
+        <div>@Model.Dateopened</div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dateclosed" class="control-label"></label>
+                <input asp-for="Dateclosed" class="form-control" />
+                <span asp-validation-for="Dateclosed" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+                @*<div class="col-md-2">
+                    <div class="form-group">
+                        <a class="btn btn-default" href="/techincident/List/@Model.TechnicianId/">Cancel</a>
+                    </div>
+                </div>*@
+            </div>
+
+            @*<div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>*@
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
