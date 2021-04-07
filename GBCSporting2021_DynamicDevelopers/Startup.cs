@@ -65,6 +65,21 @@ namespace GBCSporting2021_DynamicDevelopers
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "technicians",
+                    template: "{controller=Technicians}/{action=details}/{id?}");
+                routes.MapRoute(
+                    name: "incidents",
+                    template: "{controller=Incidents}/{action=details}/{id?}");
+                routes.MapRoute(
+                    name: "products",
+                    template: "{controller=Products}/{action=details}/{id?}");
+                routes.MapRoute(
+                    name: "about",
+                    template: "{controller=Home}/{action=about}/{id?}");
+                routes.MapRoute(
+                    name: "customer",
+                    template: "{controller=Customer}/{action=details}/{id?}");
+                routes.MapRoute(
                     name: "customer",
                     template: "{controller=Customer}/{action=Index}/{id?}");
                 routes.MapRoute(
