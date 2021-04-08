@@ -41,7 +41,7 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
 
 
         // GET: Incidents/Edit/5
-        public async Task<IActionResult> Update(int? id)
+        public IActionResult Update(int? id)
         {
             if (id == null)
             {
@@ -63,11 +63,11 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
                                 Dateopened = item.Dateopened,
                                 TechName = technician.Technicianname,
                                 ProductName = product.Productname,
-                                CustomerName = String.Concat(customer.Firstname,customer.Lastname)
-                            }).FirstOrDefault(x=>x.IncidentId==id);
+                                CustomerName = String.Concat(customer.Firstname, customer.Lastname)
+                            }).FirstOrDefault(x => x.IncidentId == id);
 
 
-           // IncidentsViewModel incidentVM = _mapper.Map<IncidentsViewModel>(incident);
+            // IncidentsViewModel incidentVM = _mapper.Map<IncidentsViewModel>(incident);
 
             if (incident == null)
             {

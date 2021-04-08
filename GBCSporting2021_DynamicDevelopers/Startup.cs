@@ -54,8 +54,8 @@ namespace GBCSporting2021_DynamicDevelopers
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                //app.UseExceptionHandler("/Home/Error");
+                //app.UseHsts();
             }
 
             app.UseHttpsRedirection();
@@ -65,28 +65,10 @@ namespace GBCSporting2021_DynamicDevelopers
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "technicians",
-                    template: "{controller=Technicians}/{action=details}/{id?}");
-                routes.MapRoute(
-                    name: "incidents",
-                    template: "{controller=Incidents}/{action=details}/{id?}");
-                routes.MapRoute(
-                    name: "products",
-                    template: "{controller=Products}/{action=details}/{id?}");
-                routes.MapRoute(
-                    name: "about",
-                    template: "{controller=Home}/{action=about}/{id?}");
-                routes.MapRoute(
-                    name: "customer",
-                    template: "{controller=Customer}/{action=details}/{id?}");
-                routes.MapRoute(
-                    name: "customer",
-                    template: "{controller=Customer}/{action=Index}/{id?}");
-                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            app.UseStatusCodePagesWithRedirects("~/Home/Error");
+            //app.UseStatusCodePagesWithRedirects("~/Home/Error");
         }
     }
 }

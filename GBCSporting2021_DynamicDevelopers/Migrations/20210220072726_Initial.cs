@@ -150,10 +150,8 @@ namespace GBCSporting2021_DynamicDevelopers.Migrations
                 {
                     { 1, "MickleRobert@domain.com", "Mickle Robert", "897-897-8979" },
                     { 2, "PalakVyas@domain.com", "Palak Vyas", "123-123-1231" },
-                    { 3, "MickleRobert@domain.com", "", "897-897-8979" },
-                    { 4, "MickleRobert@domain.com", "Mickle Robert", "897-897-8979" },
-                    { 5, "DeepakarMukhraji@domain.com", "Deepakar Mukhraji", "147-147-1474" },
-                    { 6, "MalharDave@domain.com", "Malhar Dave", "456-456-4564" }
+                    { 3, "DeepakarMukhraji@domain.com", "Deepakar Mukhraji", "147-147-1474" },
+                    { 4, "MalharDave@domain.com", "Malhar Dave", "456-456-4564" }
                 });
 
             migrationBuilder.InsertData(

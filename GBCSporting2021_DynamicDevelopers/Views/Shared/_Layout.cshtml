@@ -38,7 +38,7 @@
                     <li><a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Technicians" ? "active" : "")" asp-area="" asp-controller="Technicians" asp-action="Index">Technicians</a></li>
                     <li><a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Customers" ? "active" : "")" asp-area="" asp-controller="Customers" asp-action="Index">Customers</a></li>
                     <li><a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Incidents" ? "active" : "")" asp-area="" asp-controller="Incidents" asp-action="Index">Incidents</a></li>
-                    <li><a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Registrations</a></li>
+                    <li><a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Registration" ? "active" : "")" asp-area="" asp-controller="Registrations" asp-action="GetCustomer">Registrations</a></li>
 
 
                 </ul>

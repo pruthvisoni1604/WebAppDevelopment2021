@@ -24,7 +24,7 @@
 		return value.replace( /<.[^<>]*?>/g, " " ).replace( /&nbsp;|&#160;/gi, " " )
 
 		// Remove punctuation
-		.replace( /[.(),;:!?%#$'\"_+=\/\-“”’]*/g, "" );
+		.replace( /[.(),;:!?%#$'\"_+=\/\-""’]*/g, "" );
 	}
 
 	$.validator.addMethod( "maxWords", function( value, element, params ) {

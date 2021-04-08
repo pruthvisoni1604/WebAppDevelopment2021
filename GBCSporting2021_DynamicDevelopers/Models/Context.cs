@@ -14,6 +14,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
         public DbSet<Technician> Technicians { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Incident> Incidents { get; set; }
+        public DbSet<Registration> Registration { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -137,27 +138,13 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 new Technician
                 {
                     TechnicianId = 3,
-                    Technicianname = "",
-                    Technicianemail = "MickleRobert@domain.com",
-                    Technicianphone = "897-897-8979"
-                },
-                new Technician
-                {
-                    TechnicianId = 4,
-                    Technicianname = "Mickle Robert",
-                    Technicianemail = "MickleRobert@domain.com",
-                    Technicianphone = "897-897-8979"
-                },
-                new Technician
-                {
-                    TechnicianId = 5,
                     Technicianname = "Deepakar Mukhraji",
                     Technicianemail = "DeepakarMukhraji@domain.com",
                     Technicianphone = "147-147-1474"
                 },
                 new Technician
                 {
-                    TechnicianId = 6,
+                    TechnicianId = 4,
                     Technicianname = "Malhar Dave",
                     Technicianemail = "MalharDave@domain.com",
                     Technicianphone = "456-456-4564"
@@ -254,7 +241,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                     ProductId = 4,
                     title = "Error in all project showing ",
                     Description = "database can not load when choose show all project",
-                    TechnicianId = 6,
+                    TechnicianId = 1,
                     Dateopened = DateTime.Now,
                     Dateclosed = ""
                 },
@@ -265,7 +252,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                     ProductId = 6,
                     title = "Error in draft track 2.0",
                     Description = "Some time draft can not be tracked",
-                    TechnicianId = 6,
+                    TechnicianId = 3,
                     Dateopened = DateTime.Now,
                     Dateclosed = ""
                 },
@@ -281,8 +268,6 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                     Dateclosed = ""
                 }
                 );
-
-
         }
     }
 }

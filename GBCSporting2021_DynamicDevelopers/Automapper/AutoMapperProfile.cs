@@ -14,6 +14,8 @@ namespace GBCSporting2021_DynamicDevelopers.Automapper
         {
             CreateMap<Incident,IncidentsViewModel>();
             CreateMap<IncidentsViewModel, Incident>();
+            CreateMap<Registration, RegistrationViewModel>();
+            CreateMap<RegistrationViewModel, Registration>();
         }
     }
 }
