@@ -38,7 +38,7 @@
                     <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Technicians" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")"><a class="nav-link" asp-area="" asp-controller="Technicians" asp-action="Index">Technicians</a></li>
                     <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Customers" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")"><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index">Customers</a></li>
                     <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Incidents" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")"><a class="nav-link" asp-area="" asp-controller="Incidents" asp-action="Index">Incidents</a></li>
-                    <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Contact" ? "active" : "")"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Registrations</a></li>
+                    <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Registrations" && ViewContext.RouteData.Values["action"].ToString() == "GetCustomer" ? "active" : "")"><a class="nav-link" asp-area="" asp-controller="Registrations" asp-action="GetCustomer">Registrations</a></li>
 
 
                 </ul>

@@ -54,8 +54,8 @@ namespace GBCSporting2021_DynamicDevelopers
             }
             else
             {
-                //app.UseExceptionHandler("/Home/Error");
-                //app.UseHsts();
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
@@ -68,7 +68,7 @@ namespace GBCSporting2021_DynamicDevelopers
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            //app.UseStatusCodePagesWithRedirects("~/Home/Error");
+            app.UseStatusCodePagesWithRedirects("~/Home/Error");
         }
     }
 }
