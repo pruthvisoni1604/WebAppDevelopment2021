@@ -24,6 +24,13 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             return View(await _context.Products.ToListAsync());
         }
 
+        [HttpGet]
+        public RedirectToActionResult Cancel()
+        {
+            TempData.Clear();
+            return RedirectToAction("Index", "Products");
+        }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -57,6 +64,10 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         {
             if (ModelState.IsValid)
             {
+                TempData[nameof(Product.Productname)] = product.Productname;
+                TempData["message"] = $"Product {product.Productname} was added!";
+
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -96,6 +107,8 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
             {
                 try
                 {
+                    TempData[nameof(Product.Productname)] = product.Productname;
+                    TempData["message"] = $"Product {product.Productname} was edited!";
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
@@ -138,6 +151,7 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            TempData["message"] = $"Product {TempData[nameof(Product.ProductId)]} was deleted!";
             var product = await _context.Products.FindAsync(id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();

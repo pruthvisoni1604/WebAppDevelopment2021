@@ -4,6 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
+<h4>@{TempData["message"] = $"Product {TempData[nameof(Product.Productname)]} was edited!";}</h4>
+
 <h2>Edit</h2>
 
 <h4>Product</h4>
@@ -35,6 +37,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
+                <button class="btn btn-default"><a asp-controller="Products" asp-action="Cancel">Cancel</a></button>
             </div>
         </form>
     </div>
