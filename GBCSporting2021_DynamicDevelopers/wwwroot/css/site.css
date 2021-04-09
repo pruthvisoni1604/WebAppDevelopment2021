@@ -37,9 +37,8 @@ body {
 }
 
 
-.navbar-inverse{
-
-    background-color:#60d6bc;
+.navbar-inverse {
+    background-color: #90EE90;
 }
 
 /*
@@ -52,7 +51,7 @@ body {
     }*/
 
 .nav-men-item {
-    color: white !important;
+    color: lightgray !important;
 }
 
 
@@ -63,8 +62,8 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    background-color: #60d6bc;
-    color: black;
+    background-color: lightcyan;
+    color: midnightblue;
     font-size: small;
     padding: 5px;
     margin-top: 5px;
