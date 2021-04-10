@@ -44,19 +44,6 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 new Customer
                 {
                     CustomerId = 2,
-                    Firstname = "Rutik",
-                    Lastname = "Patel",
-                    Address = "20, bobcat terr",
-                    City = "Ahmedabad",
-                    State = "Gujrat",
-                    Postalcode = "M1B5C9",
-                    Email = "Rutik.Patel123@domain.com",
-                    CountryId = 2,
-                    Phone = "145-895-7945"
-                },
-                new Customer
-                {
-                    CustomerId = 3,
                     Firstname = "Namya",
                     Lastname = "Patel",
                     Address = "20, bobcat terr",
@@ -69,7 +56,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 },
                 new Customer
                 {
-                    CustomerId = 4,
+                    CustomerId = 3,
                     Firstname = "Pruthvi",
                     Lastname = "Soni",
                     Address = "9, Buckhurt street",
@@ -82,7 +69,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 },
                 new Customer
                 {
-                    CustomerId = 5,
+                    CustomerId = 4,
                     Firstname = "Vishwa",
                     Lastname = "Mavani",
                     Address = "78, Queen Rode",
@@ -95,7 +82,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 },
                 new Customer
                 {
-                    CustomerId = 6,
+                    CustomerId = 5,
                     Firstname = "Harsh",
                     Lastname = "Raval",
                     Address = "85, york residency",
@@ -108,7 +95,7 @@ namespace GBCSporting2021_DynamicDevelopers.Models
                 },
                 new Customer
                 {
-                    CustomerId = 7,
+                    CustomerId = 6,
                     Firstname = "Vatsal",
                     Lastname = "Bhavani",
                     Address = "65, strong trr",

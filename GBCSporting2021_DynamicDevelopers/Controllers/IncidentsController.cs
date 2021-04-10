@@ -15,11 +15,13 @@ namespace GBCSporting2021_DynamicDevelopers.Controllers
     {
         private readonly Context _context;
         private readonly IMapper _mapper;
-
+        private string filter;
         public IncidentsController(Context context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
+
+
         }
 
         // GET: Incidents

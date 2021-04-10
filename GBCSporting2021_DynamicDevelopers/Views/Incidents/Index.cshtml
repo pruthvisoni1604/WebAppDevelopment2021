@@ -1,12 +1,10 @@
-﻿@*@model IEnumerable<GBCSporting2021_DynamicDevelopers.Models.Incident>*@
-@model IEnumerable<GBCSporting2021_DynamicDevelopers.ViewModel.IncidentsViewModel>
+﻿@model IEnumerable<GBCSporting2021_DynamicDevelopers.ViewModel.IncidentsViewModel>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Incident Manager</h2>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -14,59 +12,43 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Customer)
+                Title
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Product)
+                Customer
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Technician)
+                Product
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.title)
+                Date Opened
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dateopened)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dateclosed)
-            </th>
-            <th></th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Technician.Technicianemail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dateopened)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dateclosed)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IncidentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IncidentId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IncidentId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Code)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dateopened)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IncidentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IncidentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IncidentId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
